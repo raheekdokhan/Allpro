@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "702763682567",
+    "project_id": "allpro23-c88d5",
+    "storage_bucket": "allpro23-c88d5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702763682567:android:197413e743c0ff2d8c53a2",
+        "android_client_info": {
+          "package_name": "com.example.allpro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGxNt5R6BsSNw0qv-oxgFIAKRfFrNRpj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -67,6 +67,10 @@ public class LoginFragment extends Fragment {
                             if(task.isSuccessful()){
                                 Toast.makeText(getActivity(), "You have successfully logged in!", Toast.LENGTH_SHORT).show();
                                 // TODO: انتقل إلى الصفحة الرئيسية هنا
+                                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                                ft.replace(R.id.frameLayout, new AdminFragment());
+                                ft.commit();
+
                             } else {
                                 Toast.makeText(getActivity(), "Failed to login! Check email or password!", Toast.LENGTH_SHORT).show();
                             }

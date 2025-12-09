@@ -78,7 +78,7 @@ public class StadiumAdapter extends RecyclerView.Adapter<StadiumAdapter.ViewHold
             capacity = itemView.findViewById(R.id.tvCapacity);
         }
     }
-}
+} 
 
 
 

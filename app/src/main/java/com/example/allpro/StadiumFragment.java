@@ -27,7 +27,9 @@ import java.util.UUID;
 
 public class StadiumFragment extends Fragment {
 
-    private EditText editTeamName, editStadiumName, editLocation, editCapacity;
+    private EditText editTeamName, editStadiumName, editLocation, editCapacity,
+            editOpeningDate, editSurfaceType, editBiggestMatch,
+            editFamousPlayer, editAverageAttendance, editMaxAttendance;
     private ImageView imgStadium;
     private Button btnChoosePhoto, btnSubmit;
     private Uri selectedImageUri;
@@ -39,16 +41,25 @@ public class StadiumFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_stadium, container, false);
 
+        // ربط كل EditTexts
         editTeamName = view.findViewById(R.id.editTextTeamName);
         editStadiumName = view.findViewById(R.id.editTextStadiumName);
         editLocation = view.findViewById(R.id.editTextStadiumLocation);
         editCapacity = view.findViewById(R.id.editTextStadiumCapacity);
+        editOpeningDate = view.findViewById(R.id.editTextOpeningDate);
+        editSurfaceType = view.findViewById(R.id.editTextSurfaceType);
+        editBiggestMatch = view.findViewById(R.id.editTextBiggestMatch);
+        editFamousPlayer = view.findViewById(R.id.editTextFamousPlayer);
+        editAverageAttendance = view.findViewById(R.id.editTextAverageAttendance);
+        editMaxAttendance = view.findViewById(R.id.editTextMaxAttendance);
+
         imgStadium = view.findViewById(R.id.imgStadium);
         btnChoosePhoto = view.findViewById(R.id.buttonChoosePhoto);
         btnSubmit = view.findViewById(R.id.buttonSubmit);
 
         db = FirebaseFirestore.getInstance();
 
+        // اختيار الصورة من المعرض
         ActivityResultLauncher<Intent> pickImageLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -69,12 +80,22 @@ public class StadiumFragment extends Fragment {
     }
 
     private void saveStadium() {
+        // قراءة البيانات من الحقول
         String teamName = editTeamName.getText().toString().trim();
         String stadiumName = editStadiumName.getText().toString().trim();
         String location = editLocation.getText().toString().trim();
         String capacityStr = editCapacity.getText().toString().trim();
+        String openingDate = editOpeningDate.getText().toString().trim();
+        String surfaceType = editSurfaceType.getText().toString().trim();
+        String biggestMatch = editBiggestMatch.getText().toString().trim();
+        String famousPlayer = editFamousPlayer.getText().toString().trim();
+        String averageAttendance = editAverageAttendance.getText().toString().trim();
+        String maxAttendance = editMaxAttendance.getText().toString().trim();
 
-        if (teamName.isEmpty() || stadiumName.isEmpty() || location.isEmpty() || capacityStr.isEmpty()) {
+        // التحقق من تعبئة كل الحقول
+        if (teamName.isEmpty() || stadiumName.isEmpty() || location.isEmpty() || capacityStr.isEmpty() ||
+                openingDate.isEmpty() || surfaceType.isEmpty() || biggestMatch.isEmpty() ||
+                famousPlayer.isEmpty() || averageAttendance.isEmpty() || maxAttendance.isEmpty()) {
             Toast.makeText(getContext(), "Please fill all fields", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -101,7 +122,20 @@ public class StadiumFragment extends Fragment {
                 .addOnSuccessListener(taskSnapshot -> imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
                     String imageUrl = uri.toString();
 
-                    Stadium stadium = new Stadium(teamName, stadiumName, location, capacity, imageUrl);
+                    // إنشاء كائن Stadium كامل مع كل الحقول الجديدة
+                    Stadium stadium = new Stadium(
+                            teamName,
+                            stadiumName,
+                            location,
+                            capacity,
+                            imageUrl,
+                            openingDate,
+                            surfaceType,
+                            biggestMatch,
+                            famousPlayer,
+                            averageAttendance,
+                            maxAttendance
+                    );
 
                     db.collection("stadiums")
                             .add(stadium)
@@ -115,12 +149,21 @@ public class StadiumFragment extends Fragment {
                 .addOnFailureListener(e -> Toast.makeText(getContext(), "Failed to upload image: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
+    // تفريغ الحقول بعد الحفظ
     private void clearFields() {
         editTeamName.setText("");
         editStadiumName.setText("");
         editLocation.setText("");
         editCapacity.setText("");
+        editOpeningDate.setText("");
+        editSurfaceType.setText("");
+        editBiggestMatch.setText("");
+        editFamousPlayer.setText("");
+        editAverageAttendance.setText("");
+        editMaxAttendance.setText("");
         imgStadium.setImageResource(android.R.color.transparent);
         selectedImageUri = null;
     }
 }
+
+

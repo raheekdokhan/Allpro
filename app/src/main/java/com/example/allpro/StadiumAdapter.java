@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -38,13 +39,13 @@ public class StadiumAdapter extends RecyclerView.Adapter<StadiumAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Stadium stadium = list.get(position);
 
-
+        // عرض معلومات الملعب
         holder.teamName.setText("Team: " + stadium.getTeamName());
         holder.stadiumName.setText("Stadium: " + stadium.getStadiumName());
         holder.location.setText("Location: " + stadium.getStadiumLocation());
         holder.capacity.setText("Capacity: " + stadium.getStadiumCapacity());
 
-        // ⭐ تحميل الصورة بطريقة آمنة
+        // تحميل الصورة
         if (stadium.getPhoto() != null && !stadium.getPhoto().isEmpty()) {
             Picasso.get()
                     .load(stadium.getPhoto())
@@ -54,23 +55,40 @@ public class StadiumAdapter extends RecyclerView.Adapter<StadiumAdapter.ViewHold
         } else {
             holder.imageView.setImageResource(R.drawable.ic_launcher_foreground);
         }
+
+        // عند الضغط على الملعب → فتح DetailsFragment
+        holder.itemView.setOnClickListener(v -> {
+            DetailsFragment detailsFragment = DetailsFragment.newInstance(
+                    stadium.getStadiumName(),
+                    stadium.getOpeningDate(),
+                    stadium.getSurfaceType(),
+                    stadium.getBiggestMatch(),
+                    stadium.getFamousPlayer(),
+                    stadium.getAverageAttendance(),
+                    stadium.getMaxAttendance()
+            );
+
+            if (context instanceof FragmentActivity) {
+                ((FragmentActivity) context).getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frameLayout, detailsFragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
     @Override
-
     public int getItemCount() {
         return list.size();
     }
 
-    // ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder {
-
         ImageView imageView;
         TextView teamName, stadiumName, location, capacity;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             imageView = itemView.findViewById(R.id.ivStadiumImage);
             teamName = itemView.findViewById(R.id.tvTeamName);
             stadiumName = itemView.findViewById(R.id.tvStadiumName);
@@ -78,7 +96,11 @@ public class StadiumAdapter extends RecyclerView.Adapter<StadiumAdapter.ViewHold
             capacity = itemView.findViewById(R.id.tvCapacity);
         }
     }
-} 
+}
+
+
+
+
 
 
 

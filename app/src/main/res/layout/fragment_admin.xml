@@ -19,4 +19,11 @@
         android:text="All Fragment"
         android:layout_marginTop="20dp" />
 
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:layout_marginTop="20dp" />
+
 </LinearLayout>

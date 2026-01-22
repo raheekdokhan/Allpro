@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send SMS"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <EditText
+        android:id="@+id/etPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="SMS number..."
+        android:inputType="phone"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etMessage"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:gravity="top"
+        android:hint="Message..."
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/btnSendSMS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send SMS"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>

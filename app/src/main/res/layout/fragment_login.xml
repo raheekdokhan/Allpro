@@ -50,6 +50,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp" />
 
+        <!-- رابط Signup -->
+        <TextView
+            android:id="@+id/tvSignupLinkLogin"
+            android:text="Don't have an account? Sign up"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/tvSmsLinkLogin"
+            android:text="Send Message"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" />
+
         <!-- رابط Forgot Password -->
         <TextView
             android:id="@+id/tvForgotPasswordLogin"
@@ -59,14 +76,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp" />
 
-        <!-- رابط Signup -->
+
+
+        <!-- رابط Profile -->
         <TextView
-            android:id="@+id/tvSignupLinkLogin"
-            android:text="Don't have an account? Sign up"
+            android:id="@+id/tvProfileLinkLogin"
+            android:text="Go to Profile"
             android:textColor="@android:color/holo_blue_dark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp" />
+
+
 
     </LinearLayout>
 </ScrollView>

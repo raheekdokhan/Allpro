@@ -1,6 +1,8 @@
 package com.example.allpro;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +13,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
+    EditText etPhoneNumberMain;
+    EditText etMsgBosyMain;
+    Button btnSendSMSMain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
 
         // افتح صفحة تسجيل الدخول عند التشغيل
         gotoLoginFragment();
@@ -41,4 +47,5 @@ public class MainActivity extends AppCompatActivity {
         ft.addToBackStack(null);
         ft.commit();
     }
+
 }

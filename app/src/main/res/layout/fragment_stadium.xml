@@ -1,88 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:fillViewport="true">
 
-    <!-- عنوان الصفحة -->
-    <TextView
-        android:id="@+id/tvTitle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Stadium"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <!-- إدخال اسم الفريق -->
-    <EditText
-        android:id="@+id/editTextTeamName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:hint="Team Name"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:padding="10dp" />
+        <!-- العنوان -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Stadium"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
 
-    <!-- إدخال اسم الاستاد -->
-    <EditText
-        android:id="@+id/editTextStadiumName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:hint="Stadium Name"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:padding="10dp" />
+        <!-- صورة الملعب -->
+        <ImageView
+            android:id="@+id/imgStadium"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            android:layout_marginBottom="12dp" />
 
-    <!-- إدخال الموقع -->
-    <EditText
-        android:id="@+id/editTextStadiumLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:hint="Location"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:padding="10dp" />
+        <Button
+            android:id="@+id/buttonChoosePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose Stadium Photo"
+            android:layout_marginBottom="20dp" />
 
-    <!-- إدخال السعة -->
-    <EditText
-        android:id="@+id/editTextStadiumCapacity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:hint="Capacity"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:padding="10dp" />
+        <!-- المعلومات الأساسية -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Basic Information"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
 
-    <!-- عرض صورة الاستاد -->
-    <ImageView
-        android:id="@+id/imgStadium"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginBottom="16dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_foreground" />
+        <EditText
+            android:id="@+id/editTextTeamName"
+            android:hint="Team Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
 
-    <!-- زر لاختيار صورة من المعرض -->
-    <Button
-        android:id="@+id/buttonChoosePhoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Choose Photo"
-        android:layout_marginBottom="16dp" />
+        <EditText
+            android:id="@+id/editTextStadiumName"
+            android:hint="Stadium Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
 
-    <!-- زر لحفظ البيانات -->
-    <Button
-        android:id="@+id/buttonSubmit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save Stadium" />
+        <EditText
+            android:id="@+id/editTextStadiumLocation"
+            android:hint="Location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/editTextStadiumCapacity"
+            android:hint="Capacity"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <!-- معلومات إضافية -->
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Additional Details"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editTextOpeningDate"
+            android:hint="Opening Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/editTextSurfaceType"
+            android:hint="Surface Type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/editTextBiggestMatch"
+            android:hint="Biggest Match"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/editTextFamousPlayer"
+            android:hint="Famous Player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/editTextAverageAttendance"
+            android:hint="Average Attendance"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/editTextMaxAttendance"
+            android:hint="Max Attendance"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <!-- زر الحفظ -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Stadium"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+</ScrollView>
+
 

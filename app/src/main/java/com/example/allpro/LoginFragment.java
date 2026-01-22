@@ -20,7 +20,7 @@ import com.google.firebase.auth.AuthResult;
 public class LoginFragment extends Fragment {
 
     private EditText etUsername, etPassword;
-    private TextView tvSignupLinkLogin, tvForgotPasswordLogin;
+    private TextView tvSignupLinkLogin, tvForgotPasswordLogin, tvProfileLinkLogin, tvSmsLinkLogin;
     private Button btnLogin;
     private FirebaseServices fbs;
 
@@ -36,47 +36,49 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // ✅ ربط عناصر الواجهة
+        // ربط عناصر الواجهة
         fbs = FirebaseServices.getInstance();
         etUsername = view.findViewById(R.id.etUsernameLogin);
         etPassword = view.findViewById(R.id.etPasswordLogin);
         btnLogin = view.findViewById(R.id.btnLoginLogin);
         tvSignupLinkLogin = view.findViewById(R.id.tvSignupLinkLogin);
         tvForgotPasswordLogin = view.findViewById(R.id.tvForgotPasswordLogin);
+        tvProfileLinkLogin = view.findViewById(R.id.tvProfileLinkLogin);
+        tvSmsLinkLogin = view.findViewById(R.id.tvSmsLinkLogin); // <- ربط Send Message
 
-        // 🔹 الانتقال إلى SignupFragment
+        // الانتقالات
         tvSignupLinkLogin.setOnClickListener(v -> gotoSignupFragment());
-
-        // 🔹 الانتقال إلى ForgotPasswordFragment
         tvForgotPasswordLogin.setOnClickListener(v -> gotoForgotPasswordFragment());
+        tvProfileLinkLogin.setOnClickListener(v -> gotoProfileFragment());
+        tvSmsLinkLogin.setOnClickListener(v -> gotoSmsFragment()); // <- ربط Send Message
 
-        // 🔹 تسجيل الدخول
-        btnLogin.setOnClickListener(v -> {
-            String username = etUsername.getText().toString().trim();
-            String password = etPassword.getText().toString().trim();
+        // تسجيل الدخول
+        btnLogin.setOnClickListener(v -> loginUser());
+    }
 
-            if(username.isEmpty() || password.isEmpty()){
-                Toast.makeText(getActivity(), "Some fields are empty", Toast.LENGTH_SHORT).show();
-                return;
-            }
+    private void loginUser() {
+        String username = etUsername.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
 
-            fbs.getAuth().signInWithEmailAndPassword(username, password)
-                    .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
-                                Toast.makeText(getActivity(), "You have successfully logged in!", Toast.LENGTH_SHORT).show();
-                                // TODO: انتقل إلى الصفحة الرئيسية هنا
-                                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                                ft.replace(R.id.frameLayout, new AdminFragment());
-                                ft.commit();
+        if (username.isEmpty() || password.isEmpty()) {
+            Toast.makeText(getActivity(), "Some fields are empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-                            } else {
-                                Toast.makeText(getActivity(), "Failed to login! Check email or password!", Toast.LENGTH_SHORT).show();
-                            }
+        fbs.getAuth().signInWithEmailAndPassword(username, password)
+                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getActivity(), "Logged in successfully!", Toast.LENGTH_SHORT).show();
+                            gotoAdminFragment(); // بعد تسجيل الدخول → AdminFragment أو AllFragment
+                        } else {
+                            Toast.makeText(getActivity(),
+                                    "Login failed: " + task.getException().getMessage(),
+                                    Toast.LENGTH_LONG).show();
                         }
-                    });
-        });
+                    }
+                });
     }
 
     // الانتقال إلى Signup
@@ -91,6 +93,30 @@ public class LoginFragment extends Fragment {
     private void gotoForgotPasswordFragment() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayout, new ForgotPasswordFragment());
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    // الانتقال إلى Admin بعد تسجيل الدخول
+    private void gotoAdminFragment() {
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frameLayout, new AdminFragment());
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    // الانتقال إلى Profile (صفحة التعديل)
+    private void gotoProfileFragment() {
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frameLayout, new ProfileFragment());
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    // الانتقال إلى Sms
+    private void gotoSmsFragment() {
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frameLayout, new Sms());
         ft.addToBackStack(null);
         ft.commit();
     }

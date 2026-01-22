@@ -4,34 +4,35 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:padding="24dp"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
 
         <EditText
-            android:id="@+id/etFirstNameSignup"
+            android:id="@+id/etFirstNameProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="First Name"
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/etLastNameSignup"
+            android:id="@+id/etLastNameProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Last Name"
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/etUsernameSignup"
+            android:id="@+id/etEmailProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/etPhoneSignup"
+            android:id="@+id/etPhoneProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone"
@@ -39,22 +40,22 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/etAddressSignup"
+            android:id="@+id/etAddressProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Address"
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/etPasswordSignup"
+            android:id="@+id/etPasswordProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="New Password"
             android:inputType="textPassword"
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/etConfirmPasswordSignup"
+            android:id="@+id/etConfirmPasswordProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Confirm Password"
@@ -62,16 +63,10 @@
             android:minHeight="48dp" />
 
         <Button
-            android:id="@+id/btnSignupSignup"
+            android:id="@+id/btnUpdateProfile"
+            android:text="Update"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Signup" />
-
-        <Button
-            android:id="@+id/btnLoginSignup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Go to AdminFragment" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

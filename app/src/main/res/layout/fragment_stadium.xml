@@ -76,8 +76,6 @@
             android:minHeight="48dp" />
 
         <!-- معلومات إضافية -->
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -131,6 +129,41 @@
             android:layout_height="wrap_content"
             android:minHeight="48dp" />
 
+        <EditText
+            android:id="@+id/editTextLatitude"
+            android:hint="Latitude"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/editTextLongitude"
+            android:hint="Longitude"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- صورة إضافية للتفاصيل -->
+        <ImageView
+            android:id="@+id/imgAdditionalDetail"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/buttonChooseAdditionalPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose Additional Photo"
+            android:layout_marginBottom="20dp" />
+
         <!-- زر الحفظ -->
         <Button
             android:id="@+id/buttonSubmit"
@@ -141,5 +174,3 @@
 
     </LinearLayout>
 </ScrollView>
-
-

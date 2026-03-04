@@ -29,8 +29,7 @@ public class StadiumAdapter extends RecyclerView.Adapter<StadiumAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context)
-                .inflate(R.layout.fragment_item_stadium, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.fragment_item_stadium, parent, false);
         return new ViewHolder(view);
     }
 
@@ -39,16 +38,13 @@ public class StadiumAdapter extends RecyclerView.Adapter<StadiumAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Stadium stadium = list.get(position);
 
-        // عرض معلومات الملعب
         holder.teamName.setText("Team: " + stadium.getTeamName());
         holder.stadiumName.setText("Stadium: " + stadium.getStadiumName());
         holder.location.setText("Location: " + stadium.getStadiumLocation());
         holder.capacity.setText("Capacity: " + stadium.getStadiumCapacity());
 
-        // تحميل الصورة
         if (stadium.getPhoto() != null && !stadium.getPhoto().isEmpty()) {
-            Picasso.get()
-                    .load(stadium.getPhoto())
+            Picasso.get().load(stadium.getPhoto())
                     .placeholder(R.drawable.ic_launcher_foreground)
                     .error(R.drawable.ic_launcher_foreground)
                     .into(holder.imageView);
@@ -56,7 +52,6 @@ public class StadiumAdapter extends RecyclerView.Adapter<StadiumAdapter.ViewHold
             holder.imageView.setImageResource(R.drawable.ic_launcher_foreground);
         }
 
-        // عند الضغط على الملعب → فتح DetailsFragment
         holder.itemView.setOnClickListener(v -> {
             DetailsFragment detailsFragment = DetailsFragment.newInstance(
                     stadium.getStadiumName(),
@@ -65,7 +60,9 @@ public class StadiumAdapter extends RecyclerView.Adapter<StadiumAdapter.ViewHold
                     stadium.getBiggestMatch(),
                     stadium.getFamousPlayer(),
                     stadium.getAverageAttendance(),
-                    stadium.getMaxAttendance()
+                    stadium.getMaxAttendance(),
+                    stadium.getPhoto(),
+                    stadium.getStadiumLocation()
             );
 
             if (context instanceof FragmentActivity) {
@@ -97,20 +94,3 @@ public class StadiumAdapter extends RecyclerView.Adapter<StadiumAdapter.ViewHold
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

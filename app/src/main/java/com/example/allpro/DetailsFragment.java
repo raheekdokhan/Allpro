@@ -4,23 +4,27 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.squareup.picasso.Picasso;
+
 public class DetailsFragment extends Fragment {
 
+    private ImageView ivStadiumImage;
     private TextView tvStadiumName, tvOpeningDate, tvSurfaceType, tvBiggestMatch,
             tvFamousPlayer, tvAverageAttendance, tvMaxAttendance;
+    private Button btnOpenMap;
 
-    public DetailsFragment() {
-        // Required empty public constructor
-    }
+    public DetailsFragment() {}
 
-    // إنشاء الـ Fragment مع تمرير البيانات عبر Bundle
     public static DetailsFragment newInstance(String name, String openingDate, String surfaceType,
                                               String biggestMatch, String famousPlayer,
-                                              String averageAttendance, String maxAttendance) {
+                                              String averageAttendance, String maxAttendance,
+                                              String photoUrl, String address) {
         DetailsFragment fragment = new DetailsFragment();
         Bundle args = new Bundle();
         args.putString("name", name);
@@ -30,6 +34,8 @@ public class DetailsFragment extends Fragment {
         args.putString("famousPlayer", famousPlayer);
         args.putString("averageAttendance", averageAttendance);
         args.putString("maxAttendance", maxAttendance);
+        args.putString("photoUrl", photoUrl);
+        args.putString("address", address);
         fragment.setArguments(args);
         return fragment;
     }
@@ -39,7 +45,7 @@ public class DetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_details, container, false);
 
-        // ربط العناصر
+        ivStadiumImage = view.findViewById(R.id.ivStadiumImage);
         tvStadiumName = view.findViewById(R.id.tvStadiumName);
         tvOpeningDate = view.findViewById(R.id.tvOpeningDate);
         tvSurfaceType = view.findViewById(R.id.tvSurfaceType);
@@ -47,8 +53,8 @@ public class DetailsFragment extends Fragment {
         tvFamousPlayer = view.findViewById(R.id.tvFamousPlayer);
         tvAverageAttendance = view.findViewById(R.id.tvAverageAttendance);
         tvMaxAttendance = view.findViewById(R.id.tvMaxAttendance);
+        btnOpenMap = view.findViewById(R.id.btnOpenMap);
 
-        // استلام البيانات من Bundle
         if (getArguments() != null) {
             tvStadiumName.setText(getArguments().getString("name"));
             tvOpeningDate.setText("Opening Date: " + getArguments().getString("openingDate"));
@@ -57,9 +63,27 @@ public class DetailsFragment extends Fragment {
             tvFamousPlayer.setText("Famous Player: " + getArguments().getString("famousPlayer"));
             tvAverageAttendance.setText("Average Attendance: " + getArguments().getString("averageAttendance"));
             tvMaxAttendance.setText("Max Attendance: " + getArguments().getString("maxAttendance"));
+
+            String photoUrl = getArguments().getString("photoUrl");
+            if (photoUrl != null && !photoUrl.isEmpty()) {
+                Picasso.get()
+                        .load(photoUrl)
+                        .placeholder(R.drawable.ic_launcher_foreground)
+                        .error(R.drawable.ic_launcher_foreground)
+                        .into(ivStadiumImage);
+            } else {
+                ivStadiumImage.setImageResource(R.drawable.ic_launcher_foreground);
+            }
+
+            btnOpenMap.setOnClickListener(v -> {
+                String address = getArguments().getString("address");
+                if (address != null && !address.isEmpty()) {
+                    MapDialogFragment mapFragment = MapDialogFragment.newInstance(address);
+                    mapFragment.show(getParentFragmentManager(), "mapDialog");
+                }
+            });
         }
 
         return view;
     }
 }
-

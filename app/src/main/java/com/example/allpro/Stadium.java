@@ -8,7 +8,6 @@ public class Stadium {
     private int stadiumCapacity;
     private String photo;
 
-    // الحقول الجديدة
     private String openingDate;
     private String surfaceType;
     private String biggestMatch;
@@ -16,7 +15,6 @@ public class Stadium {
     private String averageAttendance;
     private String maxAttendance;
 
-    // Firebase requires empty constructor
     public Stadium() {}
 
     public Stadium(String teamName, String stadiumName, String stadiumLocation, int stadiumCapacity, String photo,
@@ -35,45 +33,29 @@ public class Stadium {
         this.maxAttendance = maxAttendance;
     }
 
-    // Getters and setters لكل الحقول
+    // Getters
     public String getTeamName() { return teamName; }
-    public void setTeamName(String teamName) { this.teamName = teamName; }
-
     public String getStadiumName() { return stadiumName; }
-    public void setStadiumName(String stadiumName) { this.stadiumName = stadiumName; }
-
     public String getStadiumLocation() { return stadiumLocation; }
-    public void setStadiumLocation(String stadiumLocation) { this.stadiumLocation = stadiumLocation; }
-
     public int getStadiumCapacity() { return stadiumCapacity; }
-    public void setStadiumCapacity(int stadiumCapacity) { this.stadiumCapacity = stadiumCapacity; }
-
     public String getPhoto() { return photo; }
-    public void setPhoto(String photo) { this.photo = photo; }
-
     public String getOpeningDate() { return openingDate; }
-    public void setOpeningDate(String openingDate) { this.openingDate = openingDate; }
-
     public String getSurfaceType() { return surfaceType; }
-    public void setSurfaceType(String surfaceType) { this.surfaceType = surfaceType; }
-
     public String getBiggestMatch() { return biggestMatch; }
-    public void setBiggestMatch(String biggestMatch) { this.biggestMatch = biggestMatch; }
-
     public String getFamousPlayer() { return famousPlayer; }
-    public void setFamousPlayer(String famousPlayer) { this.famousPlayer = famousPlayer; }
-
     public String getAverageAttendance() { return averageAttendance; }
-    public void setAverageAttendance(String averageAttendance) { this.averageAttendance = averageAttendance; }
-
     public String getMaxAttendance() { return maxAttendance; }
+
+    // Setters
+    public void setTeamName(String teamName) { this.teamName = teamName; }
+    public void setStadiumName(String stadiumName) { this.stadiumName = stadiumName; }
+    public void setStadiumLocation(String stadiumLocation) { this.stadiumLocation = stadiumLocation; }
+    public void setStadiumCapacity(int stadiumCapacity) { this.stadiumCapacity = stadiumCapacity; }
+    public void setPhoto(String photo) { this.photo = photo; }
+    public void setOpeningDate(String openingDate) { this.openingDate = openingDate; }
+    public void setSurfaceType(String surfaceType) { this.surfaceType = surfaceType; }
+    public void setBiggestMatch(String biggestMatch) { this.biggestMatch = biggestMatch; }
+    public void setFamousPlayer(String famousPlayer) { this.famousPlayer = famousPlayer; }
+    public void setAverageAttendance(String averageAttendance) { this.averageAttendance = averageAttendance; }
     public void setMaxAttendance(String maxAttendance) { this.maxAttendance = maxAttendance; }
 }
-
-
-
-
-
-
-
-

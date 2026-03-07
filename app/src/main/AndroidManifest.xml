@@ -19,7 +19,7 @@
         <!-- مفتاح Google Maps SDK -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY_HERE" />
+            android:value="AIzaSyBuOsosFyW_xQE6i0ftjFfOEL4mZzudv6g"/>
 
         <!-- نشاط البداية -->
         <activity

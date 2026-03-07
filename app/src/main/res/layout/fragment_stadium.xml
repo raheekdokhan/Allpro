@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E8F5E9"
     android:fillViewport="true">
 
     <LinearLayout
@@ -34,6 +35,8 @@
             android:id="@+id/buttonChoosePhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:backgroundTint="#2E7D32"
             android:text="Choose Stadium Photo"
             android:layout_marginBottom="20dp" />
 
@@ -129,24 +132,26 @@
             android:layout_height="wrap_content"
             android:minHeight="48dp" />
 
-
-
-        <!-- صورة إضافية للتفاصيل -->
-        <ImageView
-            android:id="@+id/imgAdditionalDetail"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_foreground"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="12dp" />
-
-        <Button
-            android:id="@+id/buttonChooseAdditionalPhoto"
+        <EditText
+            android:id="@+id/editTextLatitude"
+            android:hint="Latitude"
+            android:inputType="numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choose Additional Photo"
-            android:layout_marginBottom="20dp" />
+            android:minHeight="48dp"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/editTextLongitude"
+            android:hint="Longitude"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- صورة إضافية للتفاصيل -->
+
 
         <!-- زر الحفظ -->
         <Button

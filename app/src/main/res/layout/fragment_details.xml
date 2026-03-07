@@ -51,5 +51,17 @@
             android:backgroundTint="#1B5E20"
             android:textColor="#FFFFFF"
             android:layout_marginTop="16dp"/>
+        <Button
+            android:id="@+id/btnGoToAllNew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go to AllNewFragment"
+            android:backgroundTint="#1B5E20"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"/>
+
     </LinearLayout>
+
 </ScrollView>

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.squareup.picasso.Picasso;
 
@@ -17,7 +18,7 @@ public class DetailsFragment extends Fragment {
     private ImageView ivStadiumImage;
     private TextView tvStadiumName, tvOpeningDate, tvSurfaceType, tvBiggestMatch,
             tvFamousPlayer, tvAverageAttendance, tvMaxAttendance;
-    private Button btnOpenMap;
+    private Button btnOpenMap, btnGoToQuiz, btnGoToTickets, btnGoToMatches, btnGoToAllNew; // زر الصفحة الرئيسية
 
     public DetailsFragment() {}
 
@@ -45,6 +46,7 @@ public class DetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_details, container, false);
 
+        // ربط عناصر الواجهة
         ivStadiumImage = view.findViewById(R.id.ivStadiumImage);
         tvStadiumName = view.findViewById(R.id.tvStadiumName);
         tvOpeningDate = view.findViewById(R.id.tvOpeningDate);
@@ -53,7 +55,10 @@ public class DetailsFragment extends Fragment {
         tvFamousPlayer = view.findViewById(R.id.tvFamousPlayer);
         tvAverageAttendance = view.findViewById(R.id.tvAverageAttendance);
         tvMaxAttendance = view.findViewById(R.id.tvMaxAttendance);
+
         btnOpenMap = view.findViewById(R.id.btnOpenMap);
+
+        btnGoToAllNew = view.findViewById(R.id.btnGoToAllNew);
 
         if (getArguments() != null) {
             tvStadiumName.setText(getArguments().getString("name"));
@@ -75,12 +80,23 @@ public class DetailsFragment extends Fragment {
                 ivStadiumImage.setImageResource(R.drawable.ic_launcher_foreground);
             }
 
+            // الخرائط
             btnOpenMap.setOnClickListener(v -> {
                 String address = getArguments().getString("address");
                 if (address != null && !address.isEmpty()) {
                     MapDialogFragment mapFragment = MapDialogFragment.newInstance(address);
                     mapFragment.show(getParentFragmentManager(), "mapDialog");
                 }
+            });
+
+
+
+            // الصفحة الرئيسية الجديدة
+            btnGoToAllNew.setOnClickListener(v -> {
+                FragmentTransaction ft = getParentFragmentManager().beginTransaction();
+                ft.replace(R.id.frameLayout, new AllNewFragment());
+                ft.addToBackStack(null);
+                ft.commit();
             });
         }
 

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_ticket_card"> <!-- نفس الخلفية التيكيت -->
+
+    <!-- اسم الملعب -->
+    <TextView
+        android:id="@+id/tvStadium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stadium"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#222222"/>
+
+    <!-- الفرق المتنافسة -->
+    <TextView
+        android:id="@+id/tvTeams"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team1 vs Team2"
+        android:layout_marginTop="4dp"
+        android:textColor="#555555"/>
+
+    <!-- التاريخ والوقت -->
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date  Time"
+        android:layout_marginTop="2dp"
+        android:textColor="#555555"/>
+
+    <!-- النتيجة الحية -->
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Live Score"
+        android:layout_marginTop="2dp"
+        android:textColor="#F44336"
+        android:textStyle="bold"/>
+
+    <!-- أزرار التذكير والبث المباشر -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btnReminder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Set Reminder"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnLive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Watch Live"
+            android:backgroundTint="#F44336"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</LinearLayout>

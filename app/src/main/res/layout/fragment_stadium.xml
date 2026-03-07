@@ -129,23 +129,7 @@
             android:layout_height="wrap_content"
             android:minHeight="48dp" />
 
-        <EditText
-            android:id="@+id/editTextLatitude"
-            android:hint="Latitude"
-            android:inputType="numberDecimal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:layout_marginTop="8dp"/>
 
-        <EditText
-            android:id="@+id/editTextLongitude"
-            android:hint="Longitude"
-            android:inputType="numberDecimal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:layout_marginTop="8dp"/>
 
         <!-- صورة إضافية للتفاصيل -->
         <ImageView

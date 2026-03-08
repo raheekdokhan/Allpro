@@ -5,9 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.allpro"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36   // فقط نسخة واحدة للcompileSdk
 
     defaultConfig {
         applicationId = "com.example.allpro"
@@ -17,6 +15,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // لإعادة تمكين Apache HTTP legacy
+        useLibrary("org.apache.http.legacy")
     }
 
     buildTypes {
@@ -28,10 +29,13 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+
 }
 
 dependencies {
@@ -45,6 +49,7 @@ dependencies {
     implementation(libs.firebase.firestore)
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation(libs.play.services.maps)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#E8F5E9"
-    android:layout_height="match_parent">
+    android:fillViewport="true">
 
     <LinearLayout
         android:padding="24dp"
@@ -10,66 +11,73 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <EditText
             android:id="@+id/etFirstNameProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="First Name"
-            android:minHeight="48dp" />
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etLastNameProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="Last Name"
-            android:minHeight="48dp" />
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etEmailProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="Email"
-            android:minHeight="48dp" />
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etPhoneProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="Phone"
             android:inputType="phone"
-            android:minHeight="48dp" />
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etAddressProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="Address"
-            android:minHeight="48dp" />
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etPasswordProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="New Password"
             android:inputType="textPassword"
-            android:minHeight="48dp" />
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etConfirmPasswordProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="Confirm Password"
             android:inputType="textPassword"
-            android:minHeight="48dp" />
+            android:layout_marginBottom="16dp"/>
 
         <Button
             android:id="@+id/btnUpdateProfile"
-            android:text="Update"
-            android:textColor="@color/white"
-            android:backgroundTint="#2E7D32"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="48dp"
+            android:text="Update"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:backgroundTint="#2E7D32"/>
 
     </LinearLayout>
 

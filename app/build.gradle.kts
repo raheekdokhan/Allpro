@@ -7,6 +7,7 @@ android {
     namespace = "com.example.allpro"
     compileSdk = 36   // فقط نسخة واحدة للcompileSdk
 
+
     defaultConfig {
         applicationId = "com.example.allpro"
         minSdk = 33

@@ -29,24 +29,22 @@ public class AdminFragment extends Fragment {
                               @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // هنا نجيب الأزرار من الـ XML
         Button btnAdd = view.findViewById(R.id.btnAdd);
         Button btnAll = view.findViewById(R.id.btnAll);
         Button btnProfile = view.findViewById(R.id.btnProfile); // زر البروفايل الجديد
 
-        // الانتقال إلى صفحة إضافة عنصر جديد (StadiumFragment)
         btnAdd.setOnClickListener(v -> getParentFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, new StadiumFragment())
                 .addToBackStack(null)
                 .commit());
 
-        // الانتقال إلى صفحة عرض جميع العناصر (AllFragment)
+
         btnAll.setOnClickListener(v -> getParentFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, new AllFragment())
                 .addToBackStack(null)
                 .commit());
 
-        // الانتقال إلى صفحة البروفايل (ProfileFragment)
+
         btnProfile.setOnClickListener(v -> getParentFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, new ProfileFragment())
                 .addToBackStack(null)

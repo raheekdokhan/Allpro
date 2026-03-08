@@ -38,13 +38,13 @@ public class TicketsFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         tickets = new ArrayList<>();
-        // مثال على بيانات تذاكر
         tickets = new ArrayList<>();
+
         tickets.add(new Ticket("FC Barcelona vs Real Madrid", "2026-05-10", "VIP", 250.0, "https://www.fcbarcelona.com/tickets"));
         tickets.add(new Ticket("Liverpool FC vs Manchester United", "2026-04-20", "Regular", 120.0, "https://www.liverpoolfc.com/tickets"));
-        tickets.add(new Ticket("Bayern Munich vs Dortmund", "2026-03-30", "Premium", 180.0, "https://fcbayern.com/tickets"));
-        tickets.add(new Ticket("Manchester United vs Chelsea", "2026-06-05", "VIP", 300.0, "https://www.manutd.com/tickets"));
-        tickets.add(new Ticket("Real Madrid vs Atletico Madrid", "2026-05-15", "Regular", 150.0, "https://www.realmadrid.com/tickets"));
+        tickets.add(new Ticket("Bayern Munich vs Dortmund", "2026-03-30", "Premium", 180.0, "https://www.bvb.de/de/en/tickets.html"));
+        tickets.add(new Ticket("Manchester United vs Chelsea", "2026-06-05", "VIP", 300.0, "https://www.chelseafc.com/en/tickets/mens-tickets"));
+        tickets.add(new Ticket("Real Madrid vs Atletico Madrid", "2026-05-15", "Regular", 150.0, "https://en.atleticodemadrid.com/listado-de-entradas"));
         tickets.add(new Ticket("Arsenal vs Tottenham", "2026-04-25", "Premium", 200.0, "https://www.arsenal.com/tickets"));
         tickets.add(new Ticket("Juventus vs Inter Milan", "2026-05-20", "VIP", 280.0, "https://www.juventus.com/tickets"));
         tickets.add(new Ticket("Paris Saint-Germain vs Marseille", "2026-06-10", "Regular", 170.0, "https://www.psg.fr/tickets"));

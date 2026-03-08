@@ -21,75 +21,82 @@
             android:textStyle="bold"
             android:textColor="#4CAF50"
             android:gravity="center"
-            android:paddingBottom="16dp"/>
+            android:layout_marginBottom="24dp"/>
 
         <!-- الحقول -->
         <EditText
             android:id="@+id/etFirstNameSignup"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="First Name"
             android:padding="12dp"
             android:textColor="#212121"
             android:textColorHint="#757575"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etLastNameSignup"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="Last Name"
             android:padding="12dp"
             android:textColor="#212121"
             android:textColorHint="#757575"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etUsernameSignup"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="Email"
             android:padding="12dp"
             android:textColor="#212121"
             android:textColorHint="#757575"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etPhoneSignup"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="Phone"
             android:inputType="phone"
             android:padding="12dp"
             android:textColor="#212121"
             android:textColorHint="#757575"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etAddressSignup"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="Address"
             android:padding="12dp"
             android:textColor="#212121"
             android:textColorHint="#757575"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etPasswordSignup"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="Password"
             android:inputType="textPassword"
             android:padding="12dp"
             android:textColor="#212121"
             android:textColorHint="#757575"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etConfirmPasswordSignup"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
+            android:textSize="16sp"
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:padding="12dp"
@@ -101,21 +108,23 @@
         <Button
             android:id="@+id/btnSignupSignup"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
             android:text="Signup"
-            android:backgroundTint="#FFFFFF"
-            android:textColor="#4CAF50"
-            android:layout_marginBottom="10dp"
+            android:textSize="16sp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"
             android:textStyle="bold"/>
 
         <Button
             android:id="@+id/btnLoginSignup"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
             android:text="Go to AdminFragment"
+            android:textSize="16sp"
             android:backgroundTint="#FFFFFF"
             android:textColor="#4CAF50"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 </ScrollView>

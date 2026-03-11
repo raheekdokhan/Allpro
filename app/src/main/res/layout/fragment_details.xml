@@ -95,6 +95,14 @@
             android:textAllCaps="false"
             android:layout_marginTop="12dp"/>
 
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1B5E20"
+            android:textColor="#FFFFFF"
+            android:text="Back"/>
+
     </LinearLayout>
 
 </ScrollView>

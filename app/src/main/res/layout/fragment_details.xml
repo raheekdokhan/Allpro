@@ -88,7 +88,7 @@
             android:id="@+id/btnGoToAllNew"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="Go to AllNewFragment"
+            android:text="Go to Events"
             android:textSize="16sp"
             android:backgroundTint="#1B5E20"
             android:textColor="#FFFFFF"

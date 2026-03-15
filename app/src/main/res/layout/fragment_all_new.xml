@@ -3,39 +3,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
-    android:background="#F5F5F5">
+    android:background="#F5F5F5"
+    android:padding="24dp">
 
-    <Button
-        android:id="@+id/btnQuiz"
+    <!-- فراغ علوي لدفع الأزرار للوسط -->
+    <View
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Quiz"
-        android:textSize="16sp"
-        android:backgroundTint="#3F51B5"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
-    <Button
-        android:id="@+id/btnTickets"
+    <!-- الأزرار بالوسط -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Tickets"
-        android:textSize="16sp"
-        android:backgroundTint="#4CAF50"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/btnMatches"
+        <Button
+            android:id="@+id/btnQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Quiz"
+            android:textSize="16sp"
+            android:backgroundTint="#3F51B5"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnTickets"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Tickets"
+            android:textSize="16sp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnMatches"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Matches"
+            android:textSize="16sp"
+            android:backgroundTint="#F44336"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+    <!-- فراغ يدفع السهم للأسفل -->
+    <View
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Matches"
-        android:textSize="16sp"
-        android:backgroundTint="#F44336"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"/>
+        android:layout_height="0dp"
+        android:layout_weight="0.9"/> <!-- قلل الوزن من 1 إلى 0.9 -->
+
+    <!-- السهم أسفل الشاشة على اليسار -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_arrow_back"
+        android:contentDescription="Back"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_gravity="start"
+        android:layout_marginBottom="16dp"/> <!-- زود المارجن السفلي قليلاً -->
+
+
 </LinearLayout>

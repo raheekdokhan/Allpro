@@ -1,40 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#E8F5E9">
+    android:background="#E8F5E9"
+    android:paddingBottom="16dp">
 
-    <Button
-        android:id="@+id/btnAdd"
+    <!-- فراغ علوي -->
+    <View
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Add Stadium"
-        android:textSize="16sp"
-        android:textColor="@color/white"
-        android:backgroundTint="#2E7D32"
-        android:layout_marginTop="12dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
-    <Button
-        android:id="@+id/btnAll"
+    <!-- الأزرار -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="All Stadiums"
-        android:textSize="16sp"
-        android:textColor="@color/white"
-        android:backgroundTint="#2E7D32"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp">
 
-    <Button
-        android:id="@+id/btnProfile"
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Add Stadium"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:backgroundTint="#2E7D32"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnAll"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="All Stadiums"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:backgroundTint="#2E7D32"/>
+    </LinearLayout>
+
+    <!-- فراغ يدفع المستطيل للأسفل -->
+    <View
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Edit Profile"
-        android:textSize="16sp"
-        android:textColor="@color/white"
-        android:backgroundTint="#2E7D32"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- مستطيل البروفايل -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardUserProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="#C8E6C9"
+            android:padding="12dp">
+
+
+
+            <!-- صورة البروفايل -->
+            <ImageView
+                android:id="@+id/imgUserProfile"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_user"
+                android:tint="#2E7D32"
+                android:layout_marginTop="8dp"/>
+
+            <!-- نص البروفايل -->
+            <TextView
+                android:id="@+id/tvUserProfileText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Profile Page"
+                android:textSize="14sp"
+                android:textColor="#1B5E20"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

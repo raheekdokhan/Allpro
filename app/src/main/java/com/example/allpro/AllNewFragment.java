@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -16,11 +17,19 @@ public class AllNewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_all_new, container, false);
 
         Button btnQuiz = view.findViewById(R.id.btnQuiz);
         Button btnTickets = view.findViewById(R.id.btnTickets);
         Button btnMatches = view.findViewById(R.id.btnMatches);
+
+        // زر الرجوع للسابق (DetailsFragment)
+        ImageView btnBack = view.findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> {
+            // سيعود للصفحة السابقة في الـ FragmentManager
+            getParentFragmentManager().popBackStack();
+        });
 
         btnQuiz.setOnClickListener(v -> {
             FragmentTransaction ft = getParentFragmentManager().beginTransaction();
@@ -38,7 +47,7 @@ public class AllNewFragment extends Fragment {
 
         btnMatches.setOnClickListener(v -> {
             FragmentTransaction ft = getParentFragmentManager().beginTransaction();
-            ft.replace(R.id.frameLayout, new MatchesFragment()); // MatchesFragment = جدول المباريات
+            ft.replace(R.id.frameLayout, new MatchesFragment());
             ft.addToBackStack(null);
             ft.commit();
         });

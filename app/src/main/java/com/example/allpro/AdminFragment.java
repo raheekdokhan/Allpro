@@ -9,11 +9,11 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.cardview.widget.CardView;
 
 public class AdminFragment extends Fragment {
 
     public AdminFragment() {
-        // Required empty public constructor
     }
 
     @Nullable
@@ -31,22 +31,20 @@ public class AdminFragment extends Fragment {
 
         Button btnAdd = view.findViewById(R.id.btnAdd);
         Button btnAll = view.findViewById(R.id.btnAll);
-        Button btnProfile = view.findViewById(R.id.btnProfile); // زر البروفايل الجديد
+        CardView cardUserProfile = view.findViewById(R.id.cardUserProfile);
 
         btnAdd.setOnClickListener(v -> getParentFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, new StadiumFragment())
                 .addToBackStack(null)
                 .commit());
 
-
         btnAll.setOnClickListener(v -> getParentFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, new AllFragment())
                 .addToBackStack(null)
                 .commit());
 
-
-        btnProfile.setOnClickListener(v -> getParentFragmentManager().beginTransaction()
-                .replace(R.id.frameLayout, new ProfileFragment())
+        cardUserProfile.setOnClickListener(v -> getParentFragmentManager().beginTransaction()
+                .replace(R.id.frameLayout, new UserProfileFragment())
                 .addToBackStack(null)
                 .commit());
     }

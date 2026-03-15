@@ -120,7 +120,7 @@
             android:id="@+id/btnLoginSignup"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="Go to AdminFragment"
+            android:text="Go to HomePage"
             android:textSize="16sp"
             android:backgroundTint="#4CAF50"
             android:textColor="#FFFFFF"

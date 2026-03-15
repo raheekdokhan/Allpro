@@ -15,10 +15,11 @@ import com.squareup.picasso.Picasso;
 
 public class DetailsFragment extends Fragment {
 
-    private ImageView ivStadiumImage;
+    private ImageView ivStadiumImage, btnBack; // btnBack الآن ImageView
     private TextView tvStadiumName, tvOpeningDate, tvSurfaceType, tvBiggestMatch,
             tvFamousPlayer, tvAverageAttendance, tvMaxAttendance;
-    private Button btnOpenMap, btnGoToQuiz, btnGoToTickets, btnGoToMatches, btnGoToAllNew; // زر الصفحة الرئيسية
+
+    private Button btnOpenMap, btnGoToAllNew;
 
     public DetailsFragment() {}
 
@@ -26,8 +27,10 @@ public class DetailsFragment extends Fragment {
                                               String biggestMatch, String famousPlayer,
                                               String averageAttendance, String maxAttendance,
                                               String photoUrl, String address) {
+
         DetailsFragment fragment = new DetailsFragment();
         Bundle args = new Bundle();
+
         args.putString("name", name);
         args.putString("openingDate", openingDate);
         args.putString("surfaceType", surfaceType);
@@ -37,6 +40,7 @@ public class DetailsFragment extends Fragment {
         args.putString("maxAttendance", maxAttendance);
         args.putString("photoUrl", photoUrl);
         args.putString("address", address);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -44,6 +48,7 @@ public class DetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_details, container, false);
 
         // ربط عناصر الواجهة
@@ -57,10 +62,11 @@ public class DetailsFragment extends Fragment {
         tvMaxAttendance = view.findViewById(R.id.tvMaxAttendance);
 
         btnOpenMap = view.findViewById(R.id.btnOpenMap);
-
         btnGoToAllNew = view.findViewById(R.id.btnGoToAllNew);
+        btnBack = view.findViewById(R.id.btnBack); // ImageView الآن
 
         if (getArguments() != null) {
+
             tvStadiumName.setText(getArguments().getString("name"));
             tvOpeningDate.setText("Opening Date: " + getArguments().getString("openingDate"));
             tvSurfaceType.setText("Surface Type: " + getArguments().getString("surfaceType"));
@@ -70,6 +76,7 @@ public class DetailsFragment extends Fragment {
             tvMaxAttendance.setText("Max Attendance: " + getArguments().getString("maxAttendance"));
 
             String photoUrl = getArguments().getString("photoUrl");
+
             if (photoUrl != null && !photoUrl.isEmpty()) {
                 Picasso.get()
                         .load(photoUrl)
@@ -80,24 +87,26 @@ public class DetailsFragment extends Fragment {
                 ivStadiumImage.setImageResource(R.drawable.ic_launcher_foreground);
             }
 
-            // الخرائط
+            // زر الخريطة
             btnOpenMap.setOnClickListener(v -> {
                 String address = getArguments().getString("address");
+
                 if (address != null && !address.isEmpty()) {
                     MapDialogFragment mapFragment = MapDialogFragment.newInstance(address);
                     mapFragment.show(getParentFragmentManager(), "mapDialog");
                 }
             });
 
-
-
-            // الصفحة الرئيسية الجديدة
+            // زر الصفحة الرئيسية (AllNewFragment)
             btnGoToAllNew.setOnClickListener(v -> {
                 FragmentTransaction ft = getParentFragmentManager().beginTransaction();
                 ft.replace(R.id.frameLayout, new AllNewFragment());
                 ft.addToBackStack(null);
                 ft.commit();
             });
+
+            // زر الرجوع
+            btnBack.setOnClickListener(v -> getParentFragmentManager().popBackStack());
         }
 
         return view;

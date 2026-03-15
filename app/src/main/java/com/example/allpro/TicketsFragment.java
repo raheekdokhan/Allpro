@@ -54,4 +54,5 @@ public class TicketsFragment extends Fragment {
         adapter = new TicketAdapter(getContext(), tickets);
         recyclerView.setAdapter(adapter);
     }
+
 }

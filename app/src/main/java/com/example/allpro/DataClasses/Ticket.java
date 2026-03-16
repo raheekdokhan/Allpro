@@ -1,4 +1,4 @@
-package com.example.allpro;
+package com.example.allpro.DataClasses;
 
 public class Ticket {
     private String matchName;

@@ -1,4 +1,4 @@
-package com.example.allpro;
+package com.example.allpro.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.cardview.widget.CardView;
+
+import com.example.allpro.R;
 
 public class AdminFragment extends Fragment {
 

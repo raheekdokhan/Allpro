@@ -1,4 +1,4 @@
-package com.example.allpro;
+package com.example.allpro.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.allpro.Adapters.MatchAdapter;
+import com.example.allpro.DataClasses.Match;
+import com.example.allpro.R;
 
 import java.util.ArrayList;
 import java.util.List;

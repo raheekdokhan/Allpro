@@ -1,4 +1,4 @@
-package com.example.allpro;
+package com.example.allpro.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.allpro.R;
 
 public class AllNewFragment extends Fragment {
 

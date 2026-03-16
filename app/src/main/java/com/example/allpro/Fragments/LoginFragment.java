@@ -1,4 +1,4 @@
-package com.example.allpro;
+package com.example.allpro.Fragments;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.allpro.Services.FirebaseServices;
+import com.example.allpro.R;
+import com.example.allpro.HelperClasses.Sms;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -43,13 +46,11 @@ public class LoginFragment extends Fragment {
         btnLogin = view.findViewById(R.id.btnLoginLogin);
         tvSignupLinkLogin = view.findViewById(R.id.tvSignupLinkLogin);
         tvForgotPasswordLogin = view.findViewById(R.id.tvForgotPasswordLogin);
-        tvProfileLinkLogin = view.findViewById(R.id.tvProfileLinkLogin);
         tvSmsLinkLogin = view.findViewById(R.id.tvSmsLinkLogin); // <- ربط Send Message
 
         // الانتقالات
         tvSignupLinkLogin.setOnClickListener(v -> gotoSignupFragment());
         tvForgotPasswordLogin.setOnClickListener(v -> gotoForgotPasswordFragment());
-        tvProfileLinkLogin.setOnClickListener(v -> gotoProfileFragment());
         tvSmsLinkLogin.setOnClickListener(v -> gotoSmsFragment()); // <- ربط Send Message
 
         // تسجيل الدخول
@@ -105,13 +106,7 @@ public class LoginFragment extends Fragment {
         ft.commit();
     }
 
-    // الانتقال إلى Profile (صفحة التعديل)
-    private void gotoProfileFragment() {
-        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.frameLayout, new ProfileFragment());
-        ft.addToBackStack(null);
-        ft.commit();
-    }
+
 
     // الانتقال إلى Sms
     private void gotoSmsFragment() {

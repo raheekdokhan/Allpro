@@ -1,4 +1,4 @@
-package com.example.allpro;
+package com.example.allpro.Fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -19,6 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.allpro.DataClasses.Stadium;
+import com.example.allpro.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;

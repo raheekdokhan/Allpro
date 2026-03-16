@@ -1,4 +1,4 @@
-package com.example.allpro;
+package com.example.allpro.Fragments;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,12 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.allpro.DataClasses.User;
+import com.example.allpro.Services.FirebaseServices;
+import com.example.allpro.R;
 import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class SignupFragment extends Fragment {
 

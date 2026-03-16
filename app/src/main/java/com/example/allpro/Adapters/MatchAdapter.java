@@ -1,4 +1,4 @@
-package com.example.allpro;
+package com.example.allpro.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.allpro.DataClasses.Match;
+import com.example.allpro.R;
+
 import java.util.List;
 
 public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.ViewHolder> {

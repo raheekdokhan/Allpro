@@ -91,16 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp" />
 
-                <!-- Profile -->
-                <TextView
-                    android:id="@+id/tvProfileLinkLogin"
-                    android:text="Go to Profile"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp" />
+
 
         </LinearLayout>
 

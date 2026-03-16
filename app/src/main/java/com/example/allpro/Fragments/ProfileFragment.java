@@ -1,4 +1,4 @@
-package com.example.allpro;
+package com.example.allpro.Fragments;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,6 +9,9 @@ import android.widget.*;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.allpro.DataClasses.User;
+import com.example.allpro.Services.FirebaseServices;
+import com.example.allpro.R;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 

@@ -1,4 +1,4 @@
-package com.example.allpro;
+package com.example.allpro.Adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.allpro.DataClasses.Stadium;
+import com.example.allpro.Fragments.DetailsFragment;
+import com.example.allpro.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

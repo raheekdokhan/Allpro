@@ -1,4 +1,4 @@
-package com.example.allpro;
+package com.example.allpro.Activites;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -10,6 +10,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.allpro.Fragments.AdminFragment;
+import com.example.allpro.Fragments.LoginFragment;
+import com.example.allpro.R;
 
 public class MainActivity extends AppCompatActivity {
 

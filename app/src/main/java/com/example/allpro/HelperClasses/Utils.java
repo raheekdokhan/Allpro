@@ -1,10 +1,8 @@
-package com.example.allpro;
+package com.example.allpro.HelperClasses;
 
 import android.content.Context;
 import android.net.Uri;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;

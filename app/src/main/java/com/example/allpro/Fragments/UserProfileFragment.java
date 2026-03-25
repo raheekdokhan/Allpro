@@ -32,7 +32,6 @@ public class UserProfileFragment extends Fragment {
     private ViewPager2 viewPager;
 
     public UserProfileFragment() {
-        // Required empty public constructor
     }
 
     public static UserProfileFragment newInstance() {
@@ -44,43 +43,29 @@ public class UserProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user_profile, container, false);
 
-        // Views
         imageProfile = view.findViewById(R.id.profile_image);
         textUsername = view.findViewById(R.id.textUsername);
         buttonEditProfile = view.findViewById(R.id.btn_edit_profile);
         buttonAdmin = view.findViewById(R.id.btn_admin);
-        buttonInvite = view.findViewById(R.id.btn_invite);
 
         statTickets = view.findViewById(R.id.stat_tickets);
         statMatches = view.findViewById(R.id.stat_matches);
         statFavorites = view.findViewById(R.id.stat_favorites);
 
 
-        // Load user data from Firebase
         loadUsernameFromFirebase();
 
-        // زر Edit Profile
         buttonEditProfile.setOnClickListener(v -> getParentFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, new ProfileFragment())
                 .addToBackStack(null)
                 .commit());
 
-        // زر Admin
         buttonAdmin.setOnClickListener(v -> getParentFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, new AdminFragment())
                 .addToBackStack(null)
                 .commit());
 
-        // زر Invite Friends
-        buttonInvite.setOnClickListener(v -> {
-            Intent shareIntent = new Intent(Intent.ACTION_SEND);
-            shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this awesome Stadium app!");
-            startActivity(Intent.createChooser(shareIntent, "Share via"));
-        });
 
-        // يمكنك إضافة إعداد ViewPager2 + Tabs هنا إذا أردت
-        // setupViewPager();
 
         return view;
     }
@@ -103,7 +88,6 @@ public class UserProfileFragment extends Fragment {
             textUsername.setText("User Name");
         }
 
-        // يمكن تحديث الإحصائيات هنا من قاعدة البيانات أو Firebase
         statTickets.setText("12");
         statMatches.setText("5");
         statFavorites.setText("3");

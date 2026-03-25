@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:paddingBottom="16dp">
 
-        <!-- Header -->
         <LinearLayout
             android:orientation="horizontal"
             android:padding="16dp"
@@ -146,28 +145,16 @@
         </LinearLayout>
 
 
-        <!-- زر دعوة صديق -->
-        <Button
-            android:id="@+id/btn_invite"
-            android:text="Invite Friends"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="#2196F3"
-            android:textColor="#FFFFFF"/>
 
 
 
 
-        <!-- بطاقات ملاعب افتراضية -->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp">
 
-            <!-- بطاقة ملعب افتراضي 1 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
@@ -207,7 +194,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- بطاقة ملعب افتراضي 2 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="120dp"

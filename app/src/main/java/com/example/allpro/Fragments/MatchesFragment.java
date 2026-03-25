@@ -42,12 +42,11 @@ public class MatchesFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         matchList = new ArrayList<>();
-        // أمثلة على المباريات
+
         matchList.add(new Match("Camp Nou", "FC Barcelona", "Real Madrid", "2026-05-10 20:00", "", "https://www.fcbarcelona.com/tickets"));
         matchList.add(new Match("Anfield", "Liverpool FC", "Manchester United", "2026-04-20 18:30", "1 - 0", "https://www.liverpoolfc.com/tickets"));
         matchList.add(new Match("Allianz Arena", "Bayern Munich", "Dortmund", "2026-03-30 19:00", "", "https://fcbayern.com/tickets"));
 
-// إضافة 4 مباريات جديدة
         matchList.add(new Match("Old Trafford", "Manchester United", "Chelsea FC", "2026-06-05 21:00", "", "https://www.manutd.com/tickets"));
         matchList.add(new Match("Santiago Bernabeu", "Real Madrid", "Atletico Madrid", "2026-06-12 20:30", "", "https://www.realmadrid.com/tickets"));
         matchList.add(new Match("Stamford Bridge", "Chelsea FC", "Arsenal FC", "2026-06-18 19:45", "", "https://www.chelseafc.com/tickets"));

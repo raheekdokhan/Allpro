@@ -39,7 +39,6 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // ربط عناصر الواجهة
         fbs = FirebaseServices.getInstance();
         etUsername = view.findViewById(R.id.etUsernameLogin);
         etPassword = view.findViewById(R.id.etPasswordLogin);
@@ -48,12 +47,10 @@ public class LoginFragment extends Fragment {
         tvForgotPasswordLogin = view.findViewById(R.id.tvForgotPasswordLogin);
         tvSmsLinkLogin = view.findViewById(R.id.tvSmsLinkLogin); // <- ربط Send Message
 
-        // الانتقالات
         tvSignupLinkLogin.setOnClickListener(v -> gotoSignupFragment());
         tvForgotPasswordLogin.setOnClickListener(v -> gotoForgotPasswordFragment());
         tvSmsLinkLogin.setOnClickListener(v -> gotoSmsFragment()); // <- ربط Send Message
 
-        // تسجيل الدخول
         btnLogin.setOnClickListener(v -> loginUser());
     }
 
@@ -82,7 +79,6 @@ public class LoginFragment extends Fragment {
                 });
     }
 
-    // الانتقال إلى Signup
     private void gotoSignupFragment() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayout, new SignupFragment());
@@ -90,7 +86,6 @@ public class LoginFragment extends Fragment {
         ft.commit();
     }
 
-    // الانتقال إلى Forgot Password
     private void gotoForgotPasswordFragment() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayout, new ForgotPasswordFragment());
@@ -98,7 +93,6 @@ public class LoginFragment extends Fragment {
         ft.commit();
     }
 
-    // الانتقال إلى Admin بعد تسجيل الدخول
     private void gotoAdminFragment() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayout, new AdminFragment());
@@ -108,7 +102,6 @@ public class LoginFragment extends Fragment {
 
 
 
-    // الانتقال إلى Sms
     private void gotoSmsFragment() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayout, new Sms());

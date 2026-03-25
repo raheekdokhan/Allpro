@@ -33,18 +33,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        // افتح صفحة تسجيل الدخول عند التشغيل
         gotoLoginFragment();
     }
 
-    // الانتقال إلى Fragment تسجيل الدخول
     private void gotoLoginFragment() {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayout, new LoginFragment());
         ft.commit();
     }
 
-    // الانتقال إلى صفحة الأدمن (تستدعيها بعد تسجيل الدخول)
     public void gotoAdminFragment() {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayout, new AdminFragment());

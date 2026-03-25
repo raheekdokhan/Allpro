@@ -7,7 +7,6 @@
     android:background="@drawable/bg_ticket_card"
     android:elevation="6dp">
 
-    <!-- اسم المباراة -->
     <TextView
         android:id="@+id/tvMatchName"
         android:layout_width="wrap_content"
@@ -17,7 +16,6 @@
         android:textSize="20sp"
         android:textColor="#212121"/>
 
-    <!-- تاريخ المباراة -->
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
@@ -26,7 +24,6 @@
         android:textColor="#757575"
         android:layout_marginTop="4dp"/>
 
-    <!-- الفئة -->
     <TextView
         android:id="@+id/tvCategory"
         android:layout_width="wrap_content"
@@ -35,7 +32,6 @@
         android:textColor="#757575"
         android:layout_marginTop="2dp"/>
 
-    <!-- السعر -->
     <TextView
         android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
@@ -45,7 +41,6 @@
         android:textStyle="bold"
         android:layout_marginTop="4dp"/>
 
-    <!-- زر الحجز مع أيقونة تذكرة -->
     <Button
         android:id="@+id/btnBook"
         android:layout_width="wrap_content"

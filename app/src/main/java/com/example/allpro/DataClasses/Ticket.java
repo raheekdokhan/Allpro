@@ -5,7 +5,7 @@ public class Ticket {
     private String date;
     private String category;
     private double price;
-    private String bookingUrl; // رابط الحجز الرسمي
+    private String bookingUrl;
 
     public Ticket(String matchName, String date, String category, double price, String bookingUrl) {
         this.matchName = matchName;

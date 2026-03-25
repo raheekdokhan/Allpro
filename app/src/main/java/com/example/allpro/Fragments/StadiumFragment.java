@@ -61,7 +61,6 @@ public class StadiumFragment extends Fragment {
 
         db = FirebaseFirestore.getInstance();
 
-        // اختيار الصورة من المعرض
         ActivityResultLauncher<Intent> pickImageLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -82,7 +81,6 @@ public class StadiumFragment extends Fragment {
     }
 
     private void saveStadium() {
-        // قراءة البيانات من الحقول
         String teamName = editTeamName.getText().toString().trim();
         String stadiumName = editStadiumName.getText().toString().trim();
         String location = editLocation.getText().toString().trim();
@@ -94,7 +92,6 @@ public class StadiumFragment extends Fragment {
         String averageAttendance = editAverageAttendance.getText().toString().trim();
         String maxAttendance = editMaxAttendance.getText().toString().trim();
 
-        // التحقق من تعبئة كل الحقول
         if (teamName.isEmpty() || stadiumName.isEmpty() || location.isEmpty() || capacityStr.isEmpty() ||
                 openingDate.isEmpty() || surfaceType.isEmpty() || biggestMatch.isEmpty() ||
                 famousPlayer.isEmpty() || averageAttendance.isEmpty() || maxAttendance.isEmpty()) {
@@ -115,7 +112,6 @@ public class StadiumFragment extends Fragment {
             return;
         }
 
-        // رفع الصورة على Firebase Storage
         StorageReference storageRef = FirebaseStorage.getInstance().getReference();
         String fileName = "stadiums/" + UUID.randomUUID().toString() + ".jpg";
         StorageReference imageRef = storageRef.child(fileName);
@@ -124,7 +120,6 @@ public class StadiumFragment extends Fragment {
                 .addOnSuccessListener(taskSnapshot -> imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
                     String imageUrl = uri.toString();
 
-                    // إنشاء كائن Stadium كامل مع كل الحقول الجديدة
                     Stadium stadium = new Stadium(
                             teamName,
                             stadiumName,
@@ -151,7 +146,6 @@ public class StadiumFragment extends Fragment {
                 .addOnFailureListener(e -> Toast.makeText(getContext(), "Failed to upload image: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
-    // تفريغ الحقول بعد الحفظ
     private void clearFields() {
         editTeamName.setText("");
         editStadiumName.setText("");

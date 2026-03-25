@@ -21,7 +21,6 @@ public class Utils {
         void onUploaded(String downloadUrl);
     }
 
-    // رفع صورة وإرجاع الرابط
     public void uploadImage(Context context, Uri imageUri, UploadCallback callback) {
 
         if (imageUri == null) {

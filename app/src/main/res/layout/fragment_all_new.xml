@@ -6,13 +6,11 @@
     android:background="#F5F5F5"
     android:padding="24dp">
 
-    <!-- فراغ علوي لدفع الأزرار للوسط -->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-    <!-- الأزرار بالوسط -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,13 +50,11 @@
             android:textAllCaps="false"/>
     </LinearLayout>
 
-    <!-- فراغ يدفع السهم للأسفل -->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.9"/> <!-- قلل الوزن من 1 إلى 0.9 -->
+        android:layout_weight="0.9"/>
 
-    <!-- السهم أسفل الشاشة على اليسار -->
     <ImageView
         android:id="@+id/btnBack"
         android:layout_width="36dp"
@@ -68,7 +64,7 @@
         android:clickable="true"
         android:focusable="true"
         android:layout_gravity="start"
-        android:layout_marginBottom="16dp"/> <!-- زود المارجن السفلي قليلاً -->
+        android:layout_marginBottom="16dp"/>
 
 
 </LinearLayout>

@@ -52,7 +52,6 @@ public class DetailsFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_details, container, false);
 
-        // ربط عناصر الواجهة
         ivStadiumImage = view.findViewById(R.id.ivStadiumImage);
         tvStadiumName = view.findViewById(R.id.tvStadiumName);
         tvOpeningDate = view.findViewById(R.id.tvOpeningDate);
@@ -64,7 +63,7 @@ public class DetailsFragment extends Fragment {
 
         btnOpenMap = view.findViewById(R.id.btnOpenMap);
         btnGoToAllNew = view.findViewById(R.id.btnGoToAllNew);
-        btnBack = view.findViewById(R.id.btnBack); // ImageView الآن
+        btnBack = view.findViewById(R.id.btnBack);
 
         if (getArguments() != null) {
 
@@ -88,7 +87,7 @@ public class DetailsFragment extends Fragment {
                 ivStadiumImage.setImageResource(R.drawable.ic_launcher_foreground);
             }
 
-            // زر الخريطة
+
             btnOpenMap.setOnClickListener(v -> {
                 String address = getArguments().getString("address");
 
@@ -98,7 +97,6 @@ public class DetailsFragment extends Fragment {
                 }
             });
 
-            // زر الصفحة الرئيسية (AllNewFragment)
             btnGoToAllNew.setOnClickListener(v -> {
                 FragmentTransaction ft = getParentFragmentManager().beginTransaction();
                 ft.replace(R.id.frameLayout, new AllNewFragment());
@@ -106,7 +104,7 @@ public class DetailsFragment extends Fragment {
                 ft.commit();
             });
 
-            // زر الرجوع
+
             btnBack.setOnClickListener(v -> getParentFragmentManager().popBackStack());
         }
 

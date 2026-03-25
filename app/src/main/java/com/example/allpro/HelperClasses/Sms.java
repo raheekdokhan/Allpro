@@ -22,7 +22,6 @@ public class Sms extends Fragment {
     private Button btnSend;
 
     public Sms() {
-        // Required empty public constructor
     }
 
     @SuppressLint("MissingInflatedId")
@@ -33,12 +32,10 @@ public class Sms extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_sms, container, false);
 
-        // 🔹 ربط العناصر
         etPhoneNumber = view.findViewById(R.id.etPhoneNumber);
         etMessage = view.findViewById(R.id.etMessage);
         btnSend = view.findViewById(R.id.btnSendSMS);
 
-        // 🔹 حدث الزر
         btnSend.setOnClickListener(v -> {
 
             String phone = etPhoneNumber.getText().toString().trim();
@@ -56,7 +53,6 @@ public class Sms extends Fragment {
         return view;
     }
 
-    // ✅ إرسال عبر تطبيق الرسائل (المفضل)
     private void sendSmsWithIntent(String phone, String message) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("smsto:" + phone));

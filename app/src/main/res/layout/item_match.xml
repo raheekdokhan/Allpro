@@ -7,7 +7,7 @@
     android:layout_margin="12dp"
     android:background="@drawable/bg_ticket_card"
     android:elevation="6dp">
-    <!-- اسم الملعب -->
+
     <TextView
         android:id="@+id/tvStadium"
         android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
         android:textSize="16sp"
         android:textColor="#222222"/>
 
-    <!-- الفرق المتنافسة -->
+
     <TextView
         android:id="@+id/tvTeams"
         android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
         android:textSize="14sp"
         android:textColor="#555555"/>
 
-    <!-- التاريخ والوقت -->
+
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
         android:textSize="13sp"
         android:textColor="#555555"/>
 
-    <!-- النتيجة الحية -->
+
     <TextView
         android:id="@+id/tvScore"
         android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
         android:textColor="#F44336"
         android:textStyle="bold"/>
 
-    <!-- أزرار التذكير والبث المباشر -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

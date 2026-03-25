@@ -12,7 +12,6 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- عنوان الصفحة -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,7 +22,6 @@
             android:gravity="center"
             android:layout_marginBottom="24dp"/>
 
-        <!-- الحقول -->
         <EditText
             android:id="@+id/etFirstNameSignup"
             android:layout_width="match_parent"
@@ -104,7 +102,6 @@
             android:textColorHint="#757575"
             android:layout_marginBottom="20dp"/>
 
-        <!-- الأزرار -->
         <Button
             android:id="@+id/btnSignupSignup"
             android:layout_width="match_parent"

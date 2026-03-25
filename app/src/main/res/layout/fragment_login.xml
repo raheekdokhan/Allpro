@@ -12,7 +12,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-                <!-- عنوان الصفحة -->
                 <TextView
                     android:id="@+id/tvLoginTitle"
                     android:text="Football Stadium Booking"
@@ -23,7 +22,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <!-- البريد الإلكتروني -->
                 <EditText
                     android:id="@+id/etUsernameLogin"
                     android:hint="Email"
@@ -35,7 +33,6 @@
                     android:background="@android:drawable/edit_text"
                     android:layout_marginBottom="12dp"/>
 
-                <!-- كلمة المرور -->
                 <EditText
                     android:id="@+id/etPasswordLogin"
                     android:hint="Password"
@@ -47,7 +44,6 @@
                     android:background="@android:drawable/edit_text"
                     android:layout_marginBottom="16dp"/>
 
-                <!-- زر تسجيل الدخول -->
                 <Button
                     android:id="@+id/btnLoginLogin"
                     android:text="Login"
@@ -58,7 +54,6 @@
                     android:layout_height="48dp"
                     android:layout_marginBottom="16dp"/>
 
-                <!-- رابط Signup -->
                 <TextView
                     android:id="@+id/tvSignupLinkLogin"
                     android:text="Don't have an account? Sign up"
@@ -69,7 +64,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp" />
 
-                <!-- Send SMS -->
                 <TextView
                     android:id="@+id/tvSmsLinkLogin"
                     android:text="Send Message"
@@ -80,7 +74,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp" />
 
-                <!-- Forgot Password -->
                 <TextView
                     android:id="@+id/tvForgotPasswordLogin"
                     android:text="Forgot Password?"

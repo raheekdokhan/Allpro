@@ -69,7 +69,6 @@ public class QuizFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-        // ربط عناصر الواجهة
         teamNameText = view.findViewById(R.id.teamNameText);
         question = view.findViewById(R.id.question);
         scoreText = view.findViewById(R.id.scoreText);
@@ -101,7 +100,6 @@ public class QuizFragment extends Fragment {
             }
         });
 
-        // زر الرجوع
         btnBack.setOnClickListener(v -> {
             getParentFragmentManager().popBackStack();
         });

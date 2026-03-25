@@ -8,7 +8,6 @@ public class User {
     private String address;
     private String phone;
 
-    // Constructor فارغ مطلوب من Firebase
     public User() {}
 
     public User(String firstName, String lastName, String email, String address, String phone, String extra) {
@@ -19,7 +18,6 @@ public class User {
         this.phone = phone;
     }
 
-    // ===== Getters & Setters =====
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
 

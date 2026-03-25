@@ -48,7 +48,6 @@ public class MapDialogFragment extends DialogFragment implements OnMapReadyCallb
             address = getArguments().getString(ARG_ADDRESS);
         }
 
-        // استخدام getChildFragmentManager() مع DialogFragment
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.map_container);
         if (mapFragment != null) {

@@ -11,7 +11,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- العنوان -->
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
@@ -22,7 +21,6 @@
             android:gravity="center"
             android:layout_marginBottom="16dp" />
 
-        <!-- صورة الملعب -->
         <ImageView
             android:id="@+id/imgStadium"
             android:layout_width="match_parent"
@@ -40,7 +38,6 @@
             android:text="Choose Stadium Photo"
             android:layout_marginBottom="20dp" />
 
-        <!-- المعلومات الأساسية -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,7 +75,6 @@
             android:layout_height="wrap_content"
             android:minHeight="48dp" />
 
-        <!-- معلومات إضافية -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -134,7 +130,6 @@
 
 
 
-        <!-- زر الحفظ -->
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"

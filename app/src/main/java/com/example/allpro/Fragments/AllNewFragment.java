@@ -26,10 +26,10 @@ public class AllNewFragment extends Fragment {
         Button btnTickets = view.findViewById(R.id.btnTickets);
         Button btnMatches = view.findViewById(R.id.btnMatches);
 
-        // زر الرجوع للسابق (DetailsFragment)
+
         ImageView btnBack = view.findViewById(R.id.btnBack);
         btnBack.setOnClickListener(v -> {
-            // سيعود للصفحة السابقة في الـ FragmentManager
+
             getParentFragmentManager().popBackStack();
         });
 

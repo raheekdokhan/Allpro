@@ -24,7 +24,7 @@ public class ForgotPasswordFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_forgot_password, container, false);
     }
 
@@ -46,7 +46,7 @@ public class ForgotPasswordFragment extends Fragment {
             auth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
                 if(task.isSuccessful()) {
                     Toast.makeText(getActivity(), "Reset link sent to your email!", Toast.LENGTH_LONG).show();
-                    etEmailForgot.setText(""); // تنظيف الحقل
+                    etEmailForgot.setText("");
                 } else {
                     Toast.makeText(getActivity(), "Failed to send reset email! Check your email address.", Toast.LENGTH_SHORT).show();
                 }

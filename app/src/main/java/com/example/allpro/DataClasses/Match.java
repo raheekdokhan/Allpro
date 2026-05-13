@@ -17,10 +17,27 @@ public class Match {
         this.streamUrl = streamUrl;
     }
 
-    public String getStadium() { return stadium; }
-    public String getHomeTeam() { return homeTeam; }
-    public String getAwayTeam() { return awayTeam; }
-    public String getDateTime() { return dateTime; }
-    public String getLiveScore() { return liveScore; }
-    public String getStreamUrl() { return streamUrl; }
+    public String getStadium() {
+        return stadium;
+    }
+
+    public String getHomeTeam() {
+        return homeTeam;
+    }
+
+    public String getAwayTeam() {
+        return awayTeam;
+    }
+
+    public String getDateTime() {
+        return dateTime;
+    }
+
+    public String getLiveScore() {
+        return liveScore;
+    }
+
+    public String getStreamUrl() {
+        return streamUrl;
+    }
 }

@@ -8,16 +8,31 @@ public class Ticket {
     private String bookingUrl;
 
     public Ticket(String matchName, String date, String category, double price, String bookingUrl) {
+
         this.matchName = matchName;
+
         this.date = date;
+
         this.category = category;
+
         this.price = price;
+
         this.bookingUrl = bookingUrl;
     }
 
-    public String getMatchName() { return matchName; }
-    public String getDate() { return date; }
-    public String getCategory() { return category; }
-    public double getPrice() { return price; }
-    public String getBookingUrl() { return bookingUrl; }
+    public String getMatchName()
+
+    { return matchName; }
+    public String getDate()
+
+    { return date; }
+    public String getCategory()
+
+    { return category; }
+    public double getPrice()
+
+    { return price; }
+    public String getBookingUrl()
+
+    { return bookingUrl; }
 }

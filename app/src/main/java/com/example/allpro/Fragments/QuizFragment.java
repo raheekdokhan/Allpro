@@ -48,12 +48,12 @@ public class QuizFragment extends Fragment {
 
     String[][] options = {
             {"Camp Nou","Anfield","Allianz Arena"},
-            {"Camp Nou","Anfield","Old Trafford"},
-            {"Camp Nou","Allianz Arena","Anfield"},
-            {"Old Trafford","Camp Nou","Anfield"},
-            {"Santiago Bernabeu","Camp Nou","Allianz Arena"},
-            {"Stamford Bridge","Old Trafford","Anfield"},
-            {"Parc des Princes","Camp Nou","Old Trafford"}
+            {"Santiago Bernabeu","Anfield","Old Trafford"},
+            {"Wembley Stadium","Allianz Arena","San Siro"},
+            {"Old Trafford","Lusail Stadium","Stamford Bridge"},
+            {"Santiago Bernabeu","Parc des Princes","Allianz Arena"},
+            {"Etihad Stadium","Stamford Bridge","Signal Iduna Park"},
+            {"Parc des Princes","San Siro","Emirates Stadium"}
     };
 
     int[] answers = {0,1,1,0,0,0,0};

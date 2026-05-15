@@ -56,7 +56,7 @@ public class FirebaseServices {
     public void getUserData(OnCompleteListener<DocumentSnapshot> listener) {
         FirebaseUser firebaseUser = getFirebaseUser();
         if (firebaseUser != null) {
-            firestore.collection("Users") //
+            firestore.collection("Users")
                     .document(firebaseUser.getUid())
                     .get()
                     .addOnCompleteListener(listener);

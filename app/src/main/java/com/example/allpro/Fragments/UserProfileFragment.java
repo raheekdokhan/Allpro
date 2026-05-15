@@ -81,7 +81,7 @@ public class UserProfileFragment extends Fragment {
         if (user != null) {
             String name = user.getDisplayName();
             if (name == null || name.isEmpty()) {
-                name = user.getEmail(); // استخدام البريد كبديل إذا الاسم فارغ
+                name = user.getEmail();
             }
             textUsername.setText(name);
         } else {

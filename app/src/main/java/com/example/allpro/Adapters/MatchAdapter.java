@@ -50,7 +50,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.ViewHolder> 
                     .putExtra(android.provider.CalendarContract.Events.DESCRIPTION,
                             "Match at " + match.getStadium())
                     .putExtra(android.provider.CalendarContract.EXTRA_EVENT_BEGIN_TIME,
-                            System.currentTimeMillis() + 3600000); // بعد ساعة
+                            System.currentTimeMillis() + 3600000);
             context.startActivity(intent);
         });
 

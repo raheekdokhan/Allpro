@@ -46,7 +46,6 @@ public class AllFragment extends Fragment {
         adapter = new StadiumAdapter(getContext(), stadiumList);
         recyclerView.setAdapter(adapter);
 
-        // ✔ التصليح الحقيقي
         db = FirebaseFirestore.getInstance();
 
         loadData();

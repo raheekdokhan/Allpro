@@ -43,7 +43,6 @@ public class StadiumFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_stadium, container, false);
 
-        // ربط كل EditTexts
         editTeamName = view.findViewById(R.id.editTextTeamName);
         editStadiumName = view.findViewById(R.id.editTextStadiumName);
         editLocation = view.findViewById(R.id.editTextStadiumLocation);

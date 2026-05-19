@@ -32,7 +32,7 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-// Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_login, container, false);
     }
 
@@ -46,11 +46,11 @@ public class LoginFragment extends Fragment {
         btnLogin = view.findViewById(R.id.btnLoginLogin);
         tvSignupLinkLogin = view.findViewById(R.id.tvSignupLinkLogin);
         tvForgotPasswordLogin = view.findViewById(R.id.tvForgotPasswordLogin);
-        tvSmsLinkLogin = view.findViewById(R.id.tvSmsLinkLogin); // <- LINK Send Message
+        tvSmsLinkLogin = view.findViewById(R.id.tvSmsLinkLogin);
 
         tvSignupLinkLogin.setOnClickListener(v -> gotoSignupFragment());
         tvForgotPasswordLogin.setOnClickListener(v -> gotoForgotPasswordFragment());
-        tvSmsLinkLogin.setOnClickListener(v -> gotoSmsFragment()); // <- LINK Send Message
+        tvSmsLinkLogin.setOnClickListener(v -> gotoSmsFragment());
 
         btnLogin.setOnClickListener(v -> loginUser());
     }
@@ -70,7 +70,7 @@ public class LoginFragment extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(getActivity(), "Logged in successfully! ", Toast.LENGTH_SHORT).show();
-                            gotoAdminFragment(); // after login → AdminFragment OR AllFragment
+                            gotoAdminFragment();
                         } else {
                             Toast.makeText(getActivity(),
                                     "Login failed: " + task.getException().getMessage(),

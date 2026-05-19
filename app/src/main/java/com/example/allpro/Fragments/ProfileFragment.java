@@ -37,7 +37,6 @@ public class ProfileFragment extends Fragment {
 
     private void init() {
         fbs = FirebaseServices.getInstance();
-
         etFirstName = getView().findViewById(R.id.etFirstNameProfile);
         etLastName = getView().findViewById(R.id.etLastNameProfile);
         etEmail = getView().findViewById(R.id.etEmailProfile);
@@ -45,7 +44,6 @@ public class ProfileFragment extends Fragment {
         etAddress = getView().findViewById(R.id.etAddressProfile);
         etPassword = getView().findViewById(R.id.etPasswordProfile);
         etConfirmPassword = getView().findViewById(R.id.etConfirmPasswordProfile);
-
         btnUpdate = getView().findViewById(R.id.btnUpdateProfile);
         btnUpdate.setOnClickListener(v -> updateUser());
 

@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 
 public class DetailsFragment extends Fragment {
 
-    private ImageView ivStadiumImage, btnBack; // btnBack الآن ImageView
+    private ImageView ivStadiumImage, btnBack;
     private TextView tvStadiumName, tvOpeningDate, tvSurfaceType, tvBiggestMatch,
             tvFamousPlayer, tvAverageAttendance, tvMaxAttendance;
 
@@ -60,7 +60,6 @@ public class DetailsFragment extends Fragment {
         tvFamousPlayer = view.findViewById(R.id.tvFamousPlayer);
         tvAverageAttendance = view.findViewById(R.id.tvAverageAttendance);
         tvMaxAttendance = view.findViewById(R.id.tvMaxAttendance);
-
         btnOpenMap = view.findViewById(R.id.btnOpenMap);
         btnGoToAllNew = view.findViewById(R.id.btnGoToAllNew);
         btnBack = view.findViewById(R.id.btnBack);

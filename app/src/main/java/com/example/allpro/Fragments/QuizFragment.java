@@ -52,7 +52,7 @@ public class QuizFragment extends Fragment {
             {"Wembley Stadium","Allianz Arena","San Siro"},
             {"Old Trafford","Lusail Stadium","Stamford Bridge"},
             {"Santiago Bernabeu","Parc des Princes","Allianz Arena"},
-            {"Etihad Stadium","Stamford Bridge","Signal Iduna Park"},
+            {"Stamford Bridge","Etihad Stadium","Signal Iduna Park"},
             {"Parc des Princes","San Siro","Emirates Stadium"}
     };
 

@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- صلاحيات الانترنت والوصول للشبكة -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -16,12 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Allpro">
 
-        <!-- مفتاح Google Maps SDK -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBc5cdLyPpODVe3pxpn4rDgfTLOsdxYQLY"/>
 
-        <!-- نشاط البداية -->
         <activity
             android:name=".Activites.MainActivity"
             android:exported="true">

@@ -35,7 +35,7 @@ public class FirebaseServices {
     public FirebaseAuth getAuth() { return auth; }
     public FirebaseDatabase getDatabase() { return database; }
     public FirebaseStorage getStorage() { return storage; }
-    public FirebaseFirestore getFirestore() { return firestore; }
+    public FirebaseFirestore getFirestore() { return firestore; } //cloud firestore
 
 
     public FirebaseUser getFirebaseUser() {

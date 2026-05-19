@@ -14,7 +14,7 @@
 
                 <TextView
                     android:id="@+id/tvLoginTitle"
-                    android:text="Football Stadium Booking"
+                    android:text="Football Stadiums "
                     android:textSize="26sp"
                     android:textStyle="bold"
                     android:textColor="#1B5E20"

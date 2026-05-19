@@ -36,7 +36,6 @@ public class SignupFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         fbs = FirebaseServices.getInstance();
-
         etUsername = view.findViewById(R.id.etUsernameSignup);
         etPassword = view.findViewById(R.id.etPasswordSignup);
         etConfirmPassword = view.findViewById(R.id.etConfirmPasswordSignup);
@@ -44,10 +43,8 @@ public class SignupFragment extends Fragment {
         etLastName = view.findViewById(R.id.etLastNameSignup);
         etPhone = view.findViewById(R.id.etPhoneSignup);
         etAddress = view.findViewById(R.id.etAddressSignup);
-
         btnSignup = view.findViewById(R.id.btnSignupSignup);
         btnLogin = view.findViewById(R.id.btnLoginSignup);
-
         btnSignup.setOnClickListener(v -> {
 
             String username = etUsername.getText().toString().trim();
